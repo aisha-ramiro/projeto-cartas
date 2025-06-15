@@ -1,0 +1,199 @@
+/* src/pages/LandingPage.css */
+
+.landing {
+  font-family: 'Georgia', serif;
+  background-color: #fefaf3;
+  color: #4a372f;
+
+}
+
+.landing-header {
+  background-color: #F3E2C6;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.landing-header img {
+  width: 40em; /* ou 10rem */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+.cta-button {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #a67c52;
+  color: #fffaf3;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 350px;
+  font-family: "Norican", cursive;
+  font-weight: 400;
+  font-size: 40px
+}
+
+
+.cta-button:hover {
+  background-color: #8b6846;
+}
+
+.intro-landing{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    gap: 25px;
+    background-color: #4A250D;
+}
+
+.intro-images{
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    padding: 50px 15px;
+}
+
+.intro-images img{
+    width: 25em;
+    height: auto;
+    border-radius: 40%;
+    border: dashed #F3E2C6;
+    padding: 5px;
+
+}
+
+.imageA{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.imageB{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #F3E2C6;
+  border: 3px dashed #412917;
+  border-radius: 10%;
+}
+
+.hero h2 {
+  margin-bottom: 20px;
+    font-family: "Norican", cursive;
+    font-size: 60px;
+    line-height: 1.2;
+    letter-spacing: 2.5px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.como-funciona-container {
+  background-color: #fef4e8;
+  padding: 60px 20px;
+  font-family: 'Georgia', serif;
+  color: #4a2e23;
+
+}
+
+.como-funciona-container h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-family: 'Great Vibes', cursive;
+  color: #5c4433;
+}
+
+.etapas {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.etapa {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #fffaf3;
+  padding: 20px;
+  border: 2px dashed #bcae9e;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.numero {
+  display: inline-block;
+  background-color: #a67c52;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.etapa p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.quem-somos p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.cta-final {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f5e7d3;
+}
+
+.cta-button.grande {
+  font-size: 18px;
+  padding: 14px 30px;
+}
+
+.landing-footer {
+  text-align: center;
+  background-color: #fef4e8;
+  padding: 20px;
+  font-size: 14px;
+  color: #6d5341;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

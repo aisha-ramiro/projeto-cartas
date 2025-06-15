@@ -8,6 +8,7 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import User from './Pages/User';
+import LandingPage from './Pages/LandingPage';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -28,20 +29,20 @@ function App() {
     <Router>
       <Navbar onLogout={handleLogout} />
       <div className="App">
-        {token ? (
-          <>
-            <Routes>
-              <Route path="/" element={<Carta token={token} />} />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+
+          {token ? (
+            <>
+              <Route path="/nova-carta" element={<Carta token={token} />} />
               <Route path="/usuario/*" element={<Usuario token={token} />} />
-              <Route path="*" element={<Navigate to="/" />} />
               <Route path="/user" element={<User token={token} />} />
-            </Routes>
-          </>
-        ) : (
-          <>
-            <Routes>
+              <Route path="*" element={<Navigate to="/nova-carta" />} />
+            </>
+          ) : (
+            <>
               <Route
-                path="/"
+                path="/login"
                 element={
                   view === 'register' ? (
                     <Register onSwitch={() => setView('login')} onRegister={() => setView('login')} />
@@ -50,14 +51,12 @@ function App() {
                   )
                 }
               />
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-           
-          </>
-        )}
-      
+              <Route path="*" element={<Navigate to="/login" />} />
+            </>
+          )}
+        </Routes>
       </div>
-         <Footer />
+      <Footer />
     </Router>
   );
 }
