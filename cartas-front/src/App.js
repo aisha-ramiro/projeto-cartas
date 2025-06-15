@@ -5,6 +5,8 @@ import Register from './Components/Register';
 import Carta from './Pages/Carta';
 import Usuario from './Pages/Usuario';
 import './App.css';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -23,11 +25,10 @@ function App() {
 
   return (
     <Router>
+      <Navbar onLogout={handleLogout} />
       <div className="App">
-        <h1>Cartas Vintage</h1>
         {token ? (
           <>
-            <button onClick={handleLogout}>Sair</button>
             <Routes>
               <Route path="/" element={<Carta token={token} />} />
               <Route path="/usuario/*" element={<Usuario token={token} />} />
@@ -49,9 +50,12 @@ function App() {
               />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
+           
           </>
         )}
+      
       </div>
+         <Footer />
     </Router>
   );
 }

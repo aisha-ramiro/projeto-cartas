@@ -1,0 +1,52 @@
+/* src/components/Acompanhamento.css */
+
+.status-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 248, 235, 0.95);
+  border: 3px double #5c4433;
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px #fff8e5, 0 0 0 6px #5c4433;
+  font-family: 'Georgia', serif;
+  color: #5c4433;
+}
+
+.status-container h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 1px dashed #bfae9e;
+  padding-bottom: 10px;
+}
+
+.carta-item {
+  background-color: #fffdf7;
+  border: 2px solid #bcae9e;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 2px 2px 8px rgba(92, 68, 51, 0.1);
+}
+
+.carta-item p {
+  margin: 6px 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #4a372d;
+}
+
+.carta-item strong {
+  color: #5c4433;
+}
+
+@media (max-width: 600px) {
+  .status-container {
+    padding: 20px;
+  }
+
+  .carta-item {
+    padding: 14px;
+  }
+}

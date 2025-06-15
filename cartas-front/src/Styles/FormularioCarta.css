@@ -1,13 +1,13 @@
 body {
-  margin: 0!important;
-  padding: 0!important;
-  background: url('../../assets/papel-antigo.jpg') no-repeat center center fixed!important;
-  background-size: cover!important;
-  font-family: 'Georgia', serif!important;
+  margin: 0;
+  padding: 0;
+  background: url('../../assets/papel-antigo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Georgia', serif;
 }
 
 .form-container {
-  width: 90%;
+  width: 600px;
   max-width: 500px;
   margin: 50px auto;
   padding: 40px;
@@ -57,7 +57,7 @@ body {
   font-family: 'Georgia', serif;
 }
 
-button[type="submit"] {
+.buttonForm {
   display: block;
   width: 100%;
   padding: 14px;

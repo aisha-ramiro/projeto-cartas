@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import '../Styles/Acompanhamento.css'
+
 const Acompanhamento = ({ token: propToken }) => {
   const token = propToken || localStorage.getItem('token');
   

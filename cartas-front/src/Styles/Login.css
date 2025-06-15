@@ -1,57 +1,58 @@
-/* Estilo vintage clássico para tela de login */
-.auth-form {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #fdf7f2;
-  border: 2px solid #d6c6b9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+body {
+  margin: 0;
+  padding: 0;
+  background: url('/assets/papel-antigo.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Georgia', serif;
 }
 
+.auth-form {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 248, 235, 0.95);
+  border: 3px double #5c4433;
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px #fff8e5, 0 0 0 6px #5c4433;
+  font-family: 'Georgia', serif;
+  color: #5c4433;
+}
+
 .auth-form h2 {
+  font-size: 32px;
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #5c4438;
-  border-bottom: 1px dashed #d6c6b9;
+  margin-bottom: 24px;
+  color: #5c4433;
+  border-bottom: 1px dashed #bfae9e;
   padding-bottom: 10px;
 }
 
-.auth-form form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .auth-form input {
-  width: 90%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #c0a98f;
-  border-radius: 6px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #5c4433;
+  border-radius: 4px;
   font-size: 16px;
-  background-color: #fffaf5;
+  background-color: #fffdf7;
+  color: #3e2c23;
 }
 
 .auth-form button {
-  width: 75%;
-  padding: 12px;
-  background-color: #a67c52;
-  color: white;
+  width: 100%;
+  padding: 14px;
+  background-color: #5c4433;
+  color: #fffaf3;
   font-weight: bold;
+  font-size: 18px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
 }
 
 .auth-form button:hover {
-  background-color: #8b6846;
-  color: #fff;
+  background-color: #3e2c23;
 }
 
 .auth-form .message {
@@ -60,6 +61,7 @@
   border-radius: 6px;
   font-weight: bold;
   text-align: center;
+  font-size: 14px;
 }
 
 .auth-form .error {
@@ -72,13 +74,13 @@
   margin-top: 15px;
   text-align: center;
   font-size: 14px;
-  color: #5c4438;
+  color: #5c4433;
 }
 
 .auth-form p button {
   background: none;
   border: none;
-  color: #a67c52;
+  color: #5c4433;
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
