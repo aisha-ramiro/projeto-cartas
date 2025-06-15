@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Styles/Login.css';
 import axios from 'axios';
 
 const Login = ({ onLogin, onSwitch }) => {

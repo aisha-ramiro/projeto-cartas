@@ -1,0 +1,77 @@
+body {
+  margin: 0!important;
+  padding: 0!important;
+  background: url('../../assets/papel-antigo.jpg') no-repeat center center fixed!important;
+  background-size: cover!important;
+  font-family: 'Georgia', serif!important;
+}
+
+.form-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(230, 213, 183, 0.959);
+  border: 3px double #5c4433;
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px #fff8e5, 0 0 0 6px #5c4433;
+  color: #5c4433;
+}
+
+.form-container h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #5c4433;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4a372d;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #5c4433;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fffdf7;
+  color: #3e2c23;
+}
+
+.input-group textarea {
+  height: 160px;
+  resize: vertical;
+  font-family: 'Georgia', serif;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: #5c4433;
+  color: #fffaf3;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e2c23;
+}

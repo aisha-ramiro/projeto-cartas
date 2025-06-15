@@ -1,0 +1,85 @@
+/* Estilo vintage clássico para tela de login */
+.auth-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fdf7f2;
+  border: 2px solid #d6c6b9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+.auth-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #5c4438;
+  border-bottom: 1px dashed #d6c6b9;
+  padding-bottom: 10px;
+}
+
+.auth-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #c0a98f;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fffaf5;
+}
+
+.auth-form button {
+  width: 75%;
+  padding: 12px;
+  background-color: #a67c52;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-form button:hover {
+  background-color: #8b6846;
+  color: #fff;
+}
+
+.auth-form .message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.auth-form .error {
+  background-color: #fddede;
+  color: #a94442;
+  border: 1px solid #e0b4b4;
+}
+
+.auth-form p {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #5c4438;
+}
+
+.auth-form p button {
+  background: none;
+  border: none;
+  color: #a67c52;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}

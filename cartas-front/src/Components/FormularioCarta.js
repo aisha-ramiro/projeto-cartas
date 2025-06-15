@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Styles/FormularioCarta.css';
 import axios from 'axios';
 
 const FormularioCarta = ({ token }) => {
@@ -59,7 +60,7 @@ const FormularioCarta = ({ token }) => {
             placeholder="Escreva sua carta aqui..."
           />
         </div>
-        <button type="submit">Enviar Carta</button>
+        <button className='buttonForm'type="submit">Enviar Carta</button>
       </form>
     </div>
   );
