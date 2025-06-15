@@ -1,0 +1,54 @@
+/* src/pages/Usuario.css */
+
+.usuario-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 40px auto;
+  border: 3px double #5c4433;
+  background-color: rgba(255, 248, 235, 0.95);
+  box-shadow: 0 0 0 4px #fff8e5, 0 0 0 6px #5c4433;
+  border-radius: 6px;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+.usuario-menu {
+  width: 250px;
+  border-right: 2px dashed #bfae9e;
+  background-color: #fdf7ee;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.usuario-menu a {
+  text-decoration: none;
+  color: #5c4433;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.usuario-menu a:hover {
+  color: #3e2c23;
+}
+
+.usuario-conteudo {
+  flex: 1;
+  padding: 30px;
+}
+
+.usuario-conteudo h2 {
+  font-size: 24px;
+  color: #5c4433;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #bfae9e;
+  padding-bottom: 10px;
+}
+
+.usuario-conteudo p {
+  font-size: 16px;
+  color: #3e2c23;
+  line-height: 1.6;
+}

@@ -20,6 +20,7 @@ const Navbar = ({ onLogout }) => {
       <ul className="navbar-links">
         <li><Link to="/">Nova Carta</Link></li>
         <li><Link to="/usuario/cartas">Minhas Cartas</Link></li>
+        <li><Link to="/user">Minha Conta</Link></li>
           <button className="logout-button" onClick={handleLogout} title="Sair">
         <FiLogOut size={20} />
       </button>

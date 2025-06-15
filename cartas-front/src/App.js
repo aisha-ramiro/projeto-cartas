@@ -7,6 +7,7 @@ import Usuario from './Pages/Usuario';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import User from './Pages/User';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -33,6 +34,7 @@ function App() {
               <Route path="/" element={<Carta token={token} />} />
               <Route path="/usuario/*" element={<Usuario token={token} />} />
               <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/user" element={<User token={token} />} />
             </Routes>
           </>
         ) : (
