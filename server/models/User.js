@@ -5,8 +5,20 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   nome: String,
   email: { type: String, required: true, unique: true },
-  senha: { type: String, required: true }
+  senha: { type: String, required: true },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  }
 });
+
+const verifyAdmin = (req, res, next) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ error: 'Acesso negado' });
+  }
+  next();
+};
+
 
 // Criptografar senha antes de salvar
 userSchema.pre('save', async function (next) {

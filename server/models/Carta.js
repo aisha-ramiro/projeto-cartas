@@ -11,7 +11,8 @@ const cartaSchema = new mongoose.Schema({
   dataCriacao: { type: Date, default: Date.now },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } // referência ao usuário
 
-});
+}, { timestamps: true });
+
 
 module.exports = mongoose.model('Carta', cartaSchema);
 

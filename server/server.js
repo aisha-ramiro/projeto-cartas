@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const cartaRoutes = require('./routes/cartaRoute'); 
 const authRoutes = require('./routes/authRoutes'); // Importa primeiro
+const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 app.use(cors());
@@ -27,6 +28,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // Rotas
 app.use('/api/auth', authRoutes);   // << precisa estar antes do listen
 app.use('/api', cartaRoutes);       // rotas das cartas
+app.use('/api/admin', adminRoutes);
 
 // Inicializar servidor
 app.listen(5000, () => {
