@@ -5,10 +5,33 @@ const auth = require('../middleware/authMiddleware');
 
 // Rota para criar uma nova carta
 router.post('/carta', auth, async (req, res) => {
-  const { destinatario, texto } = req.body;
-  const carta = new Carta({ destinatario, texto, userId: req.userId });
-  await carta.save();
-  res.status(201).json(carta);
+  try {
+    const {
+      destinatario,
+      texto,
+      assinatura,
+      tipoPapel,
+      corEnvelope,
+      corSelo,
+      tipoSelo
+    } = req.body;
+
+    const novaCarta = new Carta({
+      destinatario,
+      texto,
+      assinatura,
+      tipoPapel,
+      corEnvelope,
+      corSelo,
+      tipoSelo,
+      userId: req.userId
+    });
+
+    await novaCarta.save();
+    res.status(201).json(novaCarta);
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao criar carta' });
+  }
 });
 
 // Rota para obter o status das cartas

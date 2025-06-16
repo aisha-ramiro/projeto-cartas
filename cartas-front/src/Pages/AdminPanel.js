@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../Styles/AdminPanel.css'; // Import your CSS styles
 
 const statusOptions = ['Recebido', 'Fazendo', 'Pronto', 'A caminho', 'Cancelado'];
-const filterTabs = ['Todos', 'Fazendo', 'Pronto', 'A caminho', 'Concluído', 'Cancelado'];
+const filterTabs = ['Todos', 'Recebido', 'Fazendo', 'Pronto', 'A caminho', 'Concluído', 'Cancelado'];
 
 const AdminPanel = ({ token }) => {
   const [cartas, setCartas] = useState([]);
