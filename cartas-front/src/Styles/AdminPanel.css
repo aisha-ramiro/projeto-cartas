@@ -1,0 +1,78 @@
+/* src/pages/AdminPanel.css */
+
+.admin-panel {
+  padding: 2rem;
+  background-color: #fff8ec;
+  font-family: 'Georgia', serif;
+  color: #5c4433;
+}
+
+.admin-panel h2 {
+  font-size: 28px;
+  border-bottom: 2px dotted #c8b69b;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  color: #7a5c41;
+}
+
+.filtro-abas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.aba {
+  background-color: #f3e5c0;
+  border: 1px dashed #b89b77;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #5c4433;
+}
+
+.aba:hover {
+  background-color: #e4d0a7;
+}
+
+.aba.ativa {
+  background-color: #a67c52;
+  color: white;
+  font-weight: bold;
+  border-color: #7a5839;
+}
+
+.tabela-cartas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carta-card {
+  border: 2px dashed #d3bfa3;
+  padding: 1.5rem;
+  background-color: #fdf7f0;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.carta-card p {
+  margin: 0.4rem 0;
+}
+
+select {
+  margin-left: 10px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #c2aa91;
+  background-color: #fffaf4;
+  font-family: 'Georgia', serif;
+  color: #5c4433;
+}
+
+.mensagem-erro {
+  color: darkred;
+  font-style: italic;
+  margin-bottom: 1rem;
+}

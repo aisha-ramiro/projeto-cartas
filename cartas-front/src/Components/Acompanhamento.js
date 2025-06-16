@@ -40,6 +40,7 @@ const Acompanhamento = ({ token: propToken }) => {
               <h3>Destinatário: {carta.destinatario}</h3>
               <p>Status: {carta.status}</p>
               <p>Data: {new Date(carta.dataCriacao).toLocaleString()}</p>
+              <p><strong>Status:</strong> <span className={`status ${carta.status.toLowerCase().replaceAll(' ', '-')}`}>{carta.status}</span></p>
             </li>
           ))}
         </ul>
