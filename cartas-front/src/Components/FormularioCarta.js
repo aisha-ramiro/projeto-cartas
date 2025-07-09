@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../Styles/FormularioCarta.css'; // Import your CSS styles
+import { useNavigate } from 'react-router-dom';
+import '../Styles/FormularioCarta.css';
 
 const FormularioCarta = ({ token }) => {
   const [destinatario, setDestinatario] = useState('');
@@ -10,7 +11,9 @@ const FormularioCarta = ({ token }) => {
   const [corEnvelope, setCorEnvelope] = useState('Bege');
   const [corSelo, setCorSelo] = useState('Marrom');
   const [tipoSelo, setTipoSelo] = useState('Rosa');
-  const [message, setMessage] = useState('');
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,28 +28,29 @@ const FormularioCarta = ({ token }) => {
           papel,
           corEnvelope,
           corSelo,
-          tipoSelo
+          tipoSelo,
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
-      setMessage('Carta enviada com sucesso!');
-      setDestinatario('');
-      setTexto('');
-      setAssinatura('');
+      setShowSuccessModal(true);
+
+      setTimeout(() => {
+        setShowSuccessModal(false);
+        navigate('/usuario/cartas');
+      }, 3000);
     } catch (error) {
-      setMessage('Erro ao enviar a carta.');
+      alert('Erro ao enviar a carta.');
     }
   };
 
   return (
     <div className="formulario-container">
       <h2>Nova Carta</h2>
-      {message && <p className="form-message">{message}</p>}
 
       <form onSubmit={handleSubmit} className="formulario-flex">
         {/* BLOCO 1 - TEXTO */}
@@ -58,48 +62,56 @@ const FormularioCarta = ({ token }) => {
           <textarea required value={texto} onChange={(e) => setTexto(e.target.value)} />
 
           <label>Assinatura</label>
-          <input required placeholder='Seu nome' type="text" value={assinatura} onChange={(e) => setAssinatura(e.target.value)} />
+          <input required placeholder="Seu nome" type="text" value={assinatura} onChange={(e) => setAssinatura(e.target.value)} />
         </div>
 
         {/* BLOCO 2 - ESTILO */}
         <div className="form-bloco">
           <div>
-                <label>Tipo de Papel</label>
-          <select value={papel} onChange={(e) => setPapel(e.target.value)}>
-            <option>Normal</option>
-            <option>Envelhecido</option>
-          </select>
+            <label>Tipo de Papel</label>
+            <select value={papel} onChange={(e) => setPapel(e.target.value)}>
+              <option>Normal</option>
+              <option>Envelhecido</option>
+            </select>
 
-          <label>Cor do Envelope</label>
-          <select value={corEnvelope} onChange={(e) => setCorEnvelope(e.target.value)}>
-            <option>Bege</option>
-            <option>Marrom</option>
-            <option>Vermelho</option>
-            <option>Verde</option>
-          </select>
+            <label>Cor do Envelope</label>
+            <select value={corEnvelope} onChange={(e) => setCorEnvelope(e.target.value)}>
+              <option>Bege</option>
+              <option>Marrom</option>
+              <option>Vermelho</option>
+              <option>Verde</option>
+            </select>
 
-          <label>Cor do Selo</label>
-          <select value={corSelo} onChange={(e) => setCorSelo(e.target.value)}>
-            <option>Marrom</option>
-            <option>Vermelho</option>
-            <option>Verde</option>
-            <option>Azul</option>
-            <option>Branco</option>
-          </select>
+            <label>Cor do Selo</label>
+            <select value={corSelo} onChange={(e) => setCorSelo(e.target.value)}>
+              <option>Marrom</option>
+              <option>Vermelho</option>
+              <option>Verde</option>
+              <option>Azul</option>
+              <option>Branco</option>
+            </select>
 
-          <label>Tipo de Selo</label>
-          <select value={tipoSelo} onChange={(e) => setTipoSelo(e.target.value)}>
-            <option>Rosa</option>
-            <option>Galhos</option>
-            <option>Pena e tinta</option>
-          </select>
+            <label>Tipo de Selo</label>
+            <select value={tipoSelo} onChange={(e) => setTipoSelo(e.target.value)}>
+              <option>Rosa</option>
+              <option>Galhos</option>
+              <option>Pena e tinta</option>
+            </select>
           </div>
 
-          <div className='botao' >
+          <div className="botao">
             <button type="submit">Continuar</button>
           </div>
         </div>
       </form>
+
+      {showSuccessModal && (
+        <div className="modal-overlay">
+          <div className="success-modal">
+            <h3>Carta enviada com sucesso!</h3>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

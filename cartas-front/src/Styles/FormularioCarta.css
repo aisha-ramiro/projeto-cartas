@@ -97,3 +97,29 @@ button[type="submit"]:hover {
   font-weight: bold;
   color: green;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(60, 45, 30, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.success-modal {
+  background-color: #fffaf3;
+  color: #5c4433;
+  padding: 30px 50px;
+  border-radius: 12px;
+  border: 2px solid #a67c52;
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
