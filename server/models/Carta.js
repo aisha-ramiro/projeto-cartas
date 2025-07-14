@@ -10,7 +10,7 @@ const cartaSchema = new mongoose.Schema({
   tipoSelo: String,
   status: {
     type: String,
-    default: 'recebido'
+    default: 'Recebido'
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
