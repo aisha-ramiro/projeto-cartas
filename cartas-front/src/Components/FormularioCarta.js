@@ -1,9 +1,9 @@
+// src/Pages/FormularioCarta.js
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/FormularioCarta.css';
 
-const FormularioCarta = ({ token }) => {
+const FormularioCarta = () => {
   const [destinatario, setDestinatario] = useState('');
   const [texto, setTexto] = useState('');
   const [assinatura, setAssinatura] = useState('');
@@ -12,40 +12,26 @@ const FormularioCarta = ({ token }) => {
   const [corSelo, setCorSelo] = useState('Marrom');
   const [tipoSelo, setTipoSelo] = useState('Rosa');
 
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      await axios.post(
-        'http://localhost:5000/api/carta',
-        {
-          destinatario,
-          texto,
-          assinatura,
-          papel,
-          corEnvelope,
-          corSelo,
-          tipoSelo,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+    const dadosCarta = {
+      destinatario,
+      texto,
+      assinatura,
+      papel,
+      corEnvelope,
+      corSelo,
+      tipoSelo,
+    };
 
-      setShowSuccessModal(true);
+    // Salva no localStorage para ser usado na próxima página
+    localStorage.setItem('carta', JSON.stringify(dadosCarta));
 
-      setTimeout(() => {
-        setShowSuccessModal(false);
-        navigate('/usuario/cartas');
-      }, 3000);
-    } catch (error) {
-      alert('Erro ao enviar a carta.');
-    }
+    // Redireciona para página de endereço
+    navigate('/endereco');
   };
 
   return (
@@ -56,13 +42,29 @@ const FormularioCarta = ({ token }) => {
         {/* BLOCO 1 - TEXTO */}
         <div className="form-bloco">
           <label>Nome do Destinatário</label>
-          <input required placeholder="Quem vai receber a carta? Nome ou apelido" type="text" value={destinatario} onChange={(e) => setDestinatario(e.target.value)} />
+          <input
+            required
+            placeholder="Quem vai receber a carta? Nome ou apelido"
+            type="text"
+            value={destinatario}
+            onChange={(e) => setDestinatario(e.target.value)}
+          />
 
           <label>Texto da Carta</label>
-          <textarea required value={texto} onChange={(e) => setTexto(e.target.value)} />
+          <textarea
+            required
+            value={texto}
+            onChange={(e) => setTexto(e.target.value)}
+          />
 
           <label>Assinatura</label>
-          <input required placeholder="Seu nome" type="text" value={assinatura} onChange={(e) => setAssinatura(e.target.value)} />
+          <input
+            required
+            placeholder="Seu nome"
+            type="text"
+            value={assinatura}
+            onChange={(e) => setAssinatura(e.target.value)}
+          />
         </div>
 
         {/* BLOCO 2 - ESTILO */}
@@ -104,14 +106,6 @@ const FormularioCarta = ({ token }) => {
           </div>
         </div>
       </form>
-
-      {showSuccessModal && (
-        <div className="modal-overlay">
-          <div className="success-modal">
-            <h3>Carta enviada com sucesso!</h3>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -4,23 +4,32 @@ const cartaSchema = new mongoose.Schema({
   destinatario: String,
   texto: String,
   assinatura: String,
-  tipoPapel: String,
+  papel: String,
   corEnvelope: String,
   corSelo: String,
   tipoSelo: String,
   status: {
     type: String,
-    default: 'Recebido'
-  },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    default: 'Recebido',
   },
   dataCriacao: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  endereco: {
+    nomeDestinatario: String,
+    rua: String,
+    numero: String,
+    complemento: String,
+    bairro: String,
+    cidade: String,
+    estado: String,
+    cep: String,
+  },
 });
 
 module.exports = mongoose.model('Carta', cartaSchema);
-

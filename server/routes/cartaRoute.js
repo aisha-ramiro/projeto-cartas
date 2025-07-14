@@ -3,33 +3,36 @@ const Carta = require('../models/Carta');
 const router = express.Router();
 const auth = require('../middleware/authMiddleware');
 
-// Criar nova carta
+// Rota para criar uma nova carta
 router.post('/carta', auth, async (req, res) => {
   try {
     const {
       destinatario,
       texto,
       assinatura,
-      tipoPapel,
+      papel,
       corEnvelope,
       corSelo,
-      tipoSelo
+      tipoSelo,
+      endereco,
     } = req.body;
 
     const novaCarta = new Carta({
       destinatario,
       texto,
       assinatura,
-      tipoPapel,
+      papel,
       corEnvelope,
       corSelo,
       tipoSelo,
-      userId: req.userId
+      endereco, // novo campo
+      userId: req.userId,
     });
 
     await novaCarta.save();
     res.status(201).json(novaCarta);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Erro ao criar carta' });
   }
 });

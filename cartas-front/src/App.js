@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 import User from './Pages/User';
 import LandingPage from './Pages/LandingPage';
 import AdminPanel from './Pages/AdminPanel';
+import Endereco from './Pages/Endereco';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -40,6 +41,7 @@ function App() {
               <Route path="/user" element={<User token={token} />} />
               <Route path="*" element={<Navigate to="/nova-carta" />} />
               <Route path="/admin" element={<AdminPanel token={token} />} />
+              <Route path="/endereco" element={<Endereco />} />
             </>
           ) : (
             <>
