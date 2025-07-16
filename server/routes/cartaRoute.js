@@ -15,6 +15,7 @@ router.post('/carta', auth, async (req, res) => {
       corSelo,
       tipoSelo,
       endereco,
+      frete
     } = req.body;
 
     const novaCarta = new Carta({
@@ -25,7 +26,8 @@ router.post('/carta', auth, async (req, res) => {
       corEnvelope,
       corSelo,
       tipoSelo,
-      endereco, // novo campo
+      endereco,
+      frete,
       userId: req.userId,
     });
 

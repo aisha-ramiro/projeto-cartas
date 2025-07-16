@@ -1,3 +1,4 @@
+// models/Carta.js
 const mongoose = require('mongoose');
 
 const cartaSchema = new mongoose.Schema({
@@ -10,26 +11,31 @@ const cartaSchema = new mongoose.Schema({
   tipoSelo: String,
   status: {
     type: String,
-    default: 'Recebido',
+    default: 'Recebido'
   },
   dataCriacao: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true
   },
   endereco: {
     nomeDestinatario: String,
-    rua: String,
-    numero: String,
-    complemento: String,
-    bairro: String,
+    cep: String,
     cidade: String,
     estado: String,
-    cep: String,
+    pais: String,
+    rua: String,
+    numero: String,
+    bairro: String
   },
+  frete: {
+    valor: String,
+    prazo: String
+  }
 });
 
 module.exports = mongoose.model('Carta', cartaSchema);
